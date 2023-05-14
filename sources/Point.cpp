@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-using namespace ariel;
 
 #include "Team.hpp"
+using namespace ariel;
 
 
     double Point::distance(Point &other){return 3.3;}

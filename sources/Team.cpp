@@ -1,23 +1,23 @@
 #include <iostream>
 using namespace std;
-using namespace ariel;
 
 #include "Team.hpp" 
+using namespace ariel;
 
-Team::~Team(){}
-void Team::add(Character &leader){}
-void Team::attack(Team &enemy){}
-int Team::stillAlive(){return 2;}
-void Team::Print(){}
+Team::Team(Character *leader): leader(leader){}
+void Team::add(Character *leader){}
+void Team::attack(Team *enemy){}
+int Team::stillAlive(){return 0;}
+void Team::print(){}
 
 
-Team2::~Team2(){}
-void Team2::attack(Team2 &enemy){}
-int Team2::stillAlive(){return 2;}
-void Team2::print(){}
+TeamTow::~TeamTow(){}
+void TeamTow::attack(TeamTow *enemy){}
+int TeamTow::stillAlive(){return 0;}
+void TeamTow::print(){}
 
 
 SmartTeam::~SmartTeam(){}
-void SmartTeam::attack(Team2 &enemy){}
-int SmartTeam::stillAlive(){return 2;}
+void SmartTeam::attack(TeamTow *enemy){}
+int SmartTeam::stillAlive(){return 0;}
 void SmartTeam::print(){}

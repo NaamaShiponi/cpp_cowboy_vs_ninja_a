@@ -13,8 +13,9 @@ namespace ariel{
         int cartridge;
 
         public:
-            Cowboy(string name,Point &location):Character(name,location){};
-            void shoot(Character &enemy);
+            Cowboy(string name,const Point& location):Character(name,location){};
+            ~Cowboy(){};
+            void shoot(Character *enemy);
             bool hasboolets();
             void reload();
     };

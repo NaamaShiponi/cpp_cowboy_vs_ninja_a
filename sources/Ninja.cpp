@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-using namespace ariel;
 
 
 #include "Team.hpp"
+using namespace ariel;
 
-void Ninja::move(Character &enemy){}
-void Ninja::slash(Character &enemy){}
+void Ninja::move(Character *enemy){}
+void Ninja::slash(Character *enemy){}

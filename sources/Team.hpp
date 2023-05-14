@@ -5,48 +5,45 @@
 #include "Character.hpp"
 #include "Cowboy.hpp"
 #include "Ninja.hpp"
+#include <vector>
 
 using namespace std;
 
-namespace ariel{
+namespace ariel
+{
 
+    class Team
+    {
+        // Character listCharacter[10];
+        vector<Character*> listCharacter;
+        Character *leader;
 
-    class Team {
-        Character listCharacter[10]; 
-        Character &leader;
-        
-        public:
-
-            Team(Character &leader);
-            ~Team();
-            void add(Character &leader);
-            void attack(Team &enemy);
-            int stillAlive();
-            void Print();
-
+    public:
+        Team(Character *leader);
+        void add(Character *leader);
+        void attack(Team *enemy);
+        int stillAlive();
+        void print();
     };
 
-    class Team2 : public Team {
-        public:
-
-            Team2(Character &leader):Team(leader){}
-            ~Team2();
-            void attack(Team2 &enemy);
-            int stillAlive();
-            void print();
-
+    class TeamTow : public Team
+    {
+    public:
+        TeamTow(Character *leader) : Team(leader) {}
+        ~TeamTow();
+        void attack(TeamTow *enemy);
+        int stillAlive();
+        void print();
     };
 
-
-    class SmartTeam : public Team {
-        public:
-
-            SmartTeam(Character &leader):Team(leader){}
-            ~SmartTeam();
-            void attack(Team2 &enemy);
-            int stillAlive();
-            void print();
-
+    class SmartTeam : public Team
+    {
+    public:
+        SmartTeam(Character *leader) : Team(leader) {}
+        ~SmartTeam();
+        void attack(TeamTow *enemy);
+        int stillAlive();
+        void print();
     };
 };
 #endif
