@@ -16,10 +16,7 @@ namespace ariel
     public:
         static const int CARTR = 6;
         static const int HITPOINTS = 110;
-        Cowboy(const string &name, const Point &location) : Character(name, location, HITPOINTS)
-        {
-            cartridge = CARTR;
-        };
+        Cowboy(const string &name, const Point &location) : cartridge(CARTR),Character(name, location, HITPOINTS){};
         ~Cowboy(){};
         Cowboy(const Cowboy &) = delete;            // delete copy constructor
         Cowboy &operator=(const Cowboy &) = delete; // delete copy assignment operator
