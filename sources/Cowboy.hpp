@@ -15,9 +15,10 @@ namespace ariel
         int cartridge;
 
     public:
+        static const int HITPOINTS = 100;
         Cowboy(const string &name, const Point &location) : Character(name, location, 110)
         {
-            cartridge = MAX_CARTRIDGE;
+            cartridge = HITPOINTS;
         };
         ~Cowboy(){};
         Cowboy(const Cowboy &) = delete;            // delete copy constructor
