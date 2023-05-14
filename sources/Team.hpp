@@ -1,48 +1,47 @@
 #ifndef TEAM_H
 #define TEAM_H
+
 #include <iostream>
-#include "Point.hpp"
+#include <vector>
 #include "Character.hpp"
 #include "Cowboy.hpp"
 #include "Ninja.hpp"
-#include <vector>
+#include "Point.hpp"
 
 using namespace std;
 
-namespace ariel
-{
+namespace ariel {
 
-    class Team
-    {
+    class Team {
         vector<Character*> listCharacter;
-        Character *leader;
+        Character* leader;
 
     public:
-        Team(Character *leader);
-        void add(Character *leader);
-        void attack(Team *enemy);
+        Team(Character* leader);
+        void add(Character* member);
+        void attack(Team* enemy);
         int stillAlive();
         void print();
     };
 
-    class TeamTow : public Team
-    {
+    class Team2 : public Team {
     public:
-        TeamTow(Character *leader) : Team(leader) {}
-        ~TeamTow();
-        void attack(TeamTow *enemy);
+        Team2(Character* leader) : Team(leader) {}
+        ~Team2();
+        void attack(Team2* enemy);
         int stillAlive();
         void print();
     };
 
-    class SmartTeam : public Team
-    {
+    class SmartTeam : public Team {
     public:
-        SmartTeam(Character *leader) : Team(leader) {}
+        SmartTeam(Character* leader) : Team(leader) {}
         ~SmartTeam();
-        void attack(TeamTow *enemy);
+        void attack(Team2* enemy);
         int stillAlive();
         void print();
     };
-};
+
+}
+
 #endif

@@ -1,7 +1,9 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <iostream>
-#include "Team.hpp"
+
+#include "Point.hpp"
+
 
 
 using namespace std;
@@ -14,10 +16,10 @@ namespace ariel{
         string name;
 
         public:
-            Character(string name,const Point &location,int hitPoints):location(location),name(name),hitPoints(hitPoints){};
+            Character(const string &name,const Point &location,int hitPoints):location(location),name(name),hitPoints(hitPoints){};
             double distance(Character *other);
             void hit(int hitP);
-            string getName();
+            string getName() const {return name;}
             Point getLocation();
             char* print();
     };

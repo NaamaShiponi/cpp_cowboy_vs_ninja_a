@@ -6,18 +6,27 @@
 
 using namespace std;
 
-namespace ariel{
+namespace ariel
+{
 
-
-    class Cowboy : public Character{
+    class Cowboy : public Character
+    {
         int cartridge;
 
-        public:
-            Cowboy(string name,const Point& location):cartridge(6),Character(name,location,110){};
-            ~Cowboy(){};
-            void shoot(Character *enemy);
-            bool hasboolets();
-            void reload();
+    public:
+        Cowboy(const string &name, const Point &location) : Character(name, location, 110)
+        {
+            cartridge = 6;
+        };
+        ~Cowboy(){};
+        Cowboy(const Cowboy &) = delete;            // delete copy constructor
+        Cowboy &operator=(const Cowboy &) = delete; // delete copy assignment operator
+        Cowboy(Cowboy &&) = delete;                 // delete move constructor
+        Cowboy &operator=(Cowboy &&) = delete;      // delete move assignment operator
+
+        void shoot(Character *enemy);
+        bool hasboolets();
+        void reload();
     };
 };
 #endif

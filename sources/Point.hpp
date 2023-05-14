@@ -15,8 +15,8 @@ namespace ariel{
             double distance(Point &other);
             void print();
             void moveTowards(Point &other, double distance);
-            double getX(){return x_axis;}
-            double gety(){return y_axis;}
+            double getX() const {return x_axis;}
+            double gety() const {return y_axis;}
     };
 };
 #endif
