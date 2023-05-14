@@ -13,7 +13,7 @@ namespace ariel{
         int cartridge;
 
         public:
-            Cowboy(string name,const Point& location):Character(name,location){};
+            Cowboy(string name,const Point& location):cartridge(6),Character(name,location,110){};
             ~Cowboy(){};
             void shoot(Character *enemy);
             bool hasboolets();

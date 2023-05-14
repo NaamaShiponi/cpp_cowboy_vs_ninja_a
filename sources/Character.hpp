@@ -14,7 +14,7 @@ namespace ariel{
         string name;
 
         public:
-            Character(string name,const Point &location):location(location),name(name){};
+            Character(string name,const Point &location,int hitPoints):location(location),name(name),hitPoints(hitPoints){};
             double distance(Character *other);
             void hit(int hitP);
             string getName();

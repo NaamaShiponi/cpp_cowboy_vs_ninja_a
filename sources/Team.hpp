@@ -14,7 +14,6 @@ namespace ariel
 
     class Team
     {
-        // Character listCharacter[10];
         vector<Character*> listCharacter;
         Character *leader;
 
