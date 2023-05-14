@@ -5,7 +5,6 @@
 #include "Character.hpp"
 
 using namespace std;
-#define MAX_CARTRIDGE 6
 
 namespace ariel
 {
@@ -15,10 +14,11 @@ namespace ariel
         int cartridge;
 
     public:
-        static const int HITPOINTS = 100;
-        Cowboy(const string &name, const Point &location) : Character(name, location, 110)
+        static const int CARTR = 6;
+        static const int HITPOINTS = 110;
+        Cowboy(const string &name, const Point &location) : Character(name, location, HITPOINTS)
         {
-            cartridge = HITPOINTS;
+            cartridge = CARTR;
         };
         ~Cowboy(){};
         Cowboy(const Cowboy &) = delete;            // delete copy constructor
