@@ -37,9 +37,9 @@ TEST_CASE("check Ninja class"){
     CHECK(sushi->getLocation().getX() == 1);
     YoungNinja *tom = new YoungNinja("Tom", a);
     TrainedNinja *naama = new TrainedNinja("Naama", a);
-    CHECK(sushi->getSpeeg()==8);
-    CHECK(tom->getSpeeg()==14);
-    CHECK(naama->getSpeeg()==12);
+    CHECK(sushi->getSpeed()==8);
+    CHECK(tom->getSpeed()==14);
+    CHECK(naama->getSpeed()==12);
 
 }
 

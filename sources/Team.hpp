@@ -27,7 +27,6 @@ namespace ariel {
     class Team2 : public Team {
     public:
         Team2(Character* leader) : Team(leader) {}
-        ~Team2();
         void attack(Team2* enemy);
         int stillAlive();
         void print();
@@ -36,7 +35,6 @@ namespace ariel {
     class SmartTeam : public Team {
     public:
         SmartTeam(Character* leader) : Team(leader) {}
-        ~SmartTeam();
         void attack(Team2* enemy);
         int stillAlive();
         void print();

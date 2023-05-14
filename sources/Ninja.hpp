@@ -1,45 +1,61 @@
 #ifndef NINJA_H
 #define NINJA_H
+
 #include <iostream>
 #include "Point.hpp"
 #include "Character.hpp"
 
-using namespace std;
-
 namespace ariel
 {
+    const int DEFAULT_SPEED = 10;
+    const int DEFAULT_HITPOINTS = 100;
+    const int OLD_NINJA_SPEED = 8;
+    const int OLD_NINJA_HITPOINTS = 150;
+    const int YOUNG_NINJA_SPEED = 14;
+    const int YOUNG_NINJA_HITPOINTS = 100;
+    const int TRAINED_NINJA_SPEED = 12;
+    const int TRAINED_NINJA_HITPOINTS = 120;
 
     class Ninja : public Character
     {
         int speed;
+        int hitPoints;
 
     public:
-        Ninja(const string &name, const Point &location, int speed, int hitPoints) : speed(speed), Character(name, location, hitPoints){};
-        Ninja(const Ninja &) = delete;            // delete copy constructor
-        Ninja &operator=(const Ninja &) = delete; // delete copy assignment operator
-        Ninja(Ninja &&) = delete;                 // delete move constructor
-        Ninja &operator=(Ninja &&) = delete;      // delete move assignment operator
+        Ninja(const std::string& name, const Point& location, int speed = DEFAULT_SPEED, int hitPoints = DEFAULT_HITPOINTS)
+            : Character(name, location, hitPoints), speed(speed), hitPoints(hitPoints) {}
+        Ninja(const Ninja&) = delete;
+        Ninja& operator=(const Ninja&) = delete;
+        Ninja(Ninja&&) = delete;
+        Ninja& operator=(Ninja&&) = delete;
 
-        int getSpeeg() const { return speed; }
-        void move(Character *enemy);
-        void slash(Character *enemy);
+        int getSpeed() const { return speed; }
+        int getHitPoints() const { return hitPoints; }
+        void move(Character* enemy);
+        void slash(Character* enemy);
     };
 
     class OldNinja : public Ninja
     {
     public:
-        OldNinja(const string &name, const Point &location) : Ninja(name, location, 8, 150){};
+        OldNinja(const std::string& name, const Point& location)
+            : Ninja(name, location, OLD_NINJA_SPEED, OLD_NINJA_HITPOINTS) {}
     };
+
     class YoungNinja : public Ninja
     {
     public:
-        YoungNinja(const string &name, const Point &location) : Ninja(name, location, 14, 100){};
+        YoungNinja(const std::string& name, const Point& location)
+            : Ninja(name, location, YOUNG_NINJA_SPEED, YOUNG_NINJA_HITPOINTS) {}
     };
+
     class TrainedNinja : public Ninja
     {
     public:
-        TrainedNinja(const string &name, const Point &location) : Ninja(name, location, 12, 120){};
+        TrainedNinja(const std::string& name, const Point& location)
+            : Ninja(name, location, TRAINED_NINJA_SPEED, TRAINED_NINJA_HITPOINTS) {}
     };
 
-};
-#endif
+} 
+
+#endif 
